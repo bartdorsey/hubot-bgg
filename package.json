@@ -16,10 +16,10 @@
     "url": "https://github.com/hubot-scripts/hubot-bgg/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "bgg": "^1.0.0"
   },
   "devDependencies": {
-    "bgg": "^1.0.0",
     "chai": "*",
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "~0.5.3",
