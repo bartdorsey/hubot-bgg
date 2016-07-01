@@ -26,7 +26,10 @@ bgg = require('bgg')(options)
 
 module.exports = (robot) ->
   robot.respond /bgg search (.*)/, (msg) ->
-    bgg('search', query: msg.match[1])
+    params = 
+      query: msg.match[1]
+      type: 'boardgame'
+    bgg('search', params)
       .then (results) -> 
         items = results.items.item
         for item in items
