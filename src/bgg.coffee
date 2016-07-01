@@ -20,9 +20,5 @@ module.exports = (robot) ->
   robot.respond /bgg search (.*)/, (msg) ->
     bgg('search', { query: ""})
       .then (results) -> 
+        msg.reply "hello!"
         console.log(results)
-
-    msg.reply "hello!"
-
-  robot.hear /orly/, ->
-    msg.send "yarly"
