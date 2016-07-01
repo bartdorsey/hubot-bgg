@@ -34,6 +34,8 @@ module.exports = (robot) ->
     bgg('search', params)
       .then (results) -> 
         if results.items.total > 0
+          if results.items.total = 1
+            items = [items]
           items = results.items.item.slice(0,4)
           for item in items
             do (item) -> 
