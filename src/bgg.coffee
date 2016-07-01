@@ -27,7 +27,7 @@ bgg = require('bgg')(options)
 module.exports = (robot) ->
   robot.respond /bgg search (.*)/, (msg) ->
     params = 
-      query: msg.match[1]
+      query: encodeURI msg.match[1]
       type: 'boardgame'
     bgg('search', params)
       .then (results) -> 
