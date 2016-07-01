@@ -29,6 +29,7 @@ module.exports = (robot) ->
     params = 
       query: encodeURI msg.match[1]
       type: 'boardgame'
+    console.log params
     bgg('search', params)
       .then (results) -> 
         if results.items.total > 0
