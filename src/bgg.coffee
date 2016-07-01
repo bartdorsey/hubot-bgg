@@ -34,7 +34,7 @@ module.exports = (robot) ->
     bgg('search', params)
       .then (results) -> 
         if results.items.total > 0
-          items = results.items.item
+          items = results.items.item.slice(0,4)
           for item in items
             do (item) -> 
               msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
