@@ -32,7 +32,10 @@ module.exports = (robot) ->
     bgg('search', params)
       .then (results) -> 
         items = results.items.item
-        for item in items
-          do (item) -> 
-            msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
+        if items.length
+          for item in items
+            do (item) -> 
+              msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
+        else
+          msg.send "We couldn't find any boardgames matching \"#{msg.match[1]}\""
         
