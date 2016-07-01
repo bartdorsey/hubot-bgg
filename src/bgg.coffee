@@ -31,6 +31,7 @@ module.exports = (robot) ->
       type: 'boardgame'
     bgg('search', params)
       .then (results) -> 
+        console.log results
         items = results.items.item
         if items.length
           for item in items
