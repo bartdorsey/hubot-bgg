@@ -31,9 +31,8 @@ module.exports = (robot) ->
       type: 'boardgame'
     bgg('search', params)
       .then (results) -> 
-        console.log results
-        items = results.items.item
-        if items.length
+        if results.items.total > 0
+          items = results.items.item
           for item in items
             do (item) -> 
               msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
