@@ -29,6 +29,7 @@ module.exports = (robot) ->
     bgg('search', query: msg.match[1])
       .then (results) -> 
         items = results.items.item
-        items = for item in items
-          "<a href=\"http://www.boardgamegeek.com/#{item.type}/#{item.id}\">#{item.name.value}</a>"
-        msg.reply items.join(',')
+        for item in items
+          do (item) -> 
+            msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
+        
