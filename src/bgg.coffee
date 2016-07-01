@@ -14,21 +14,19 @@
 # Author:
 #   Bart Dorsey[@<org>]
 
-options = {
-  timeout: 10000, 
+options = 
+  timeout: 10000
   
-  retry: {
-    initial: 100,
-    multiplier: 2,
+  retry: 
+    initial: 100
+    multiplier: 2
     max: 15e3
-  }
-}
 
 bgg = require('bgg')(options)
 
 module.exports = (robot) ->
   robot.respond /bgg search (.*)/, (msg) ->
-    bgg('search', { query: ""})
+    bgg('search', query: msg.match[1])
       .then (results) -> 
         msg.reply "hello!"
         console.log(results)
