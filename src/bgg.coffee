@@ -26,8 +26,9 @@ bgg = require('bgg')(options)
 
 module.exports = (robot) ->
   robot.respond /bgg search (.*)$/, (msg) ->
+    query = msg.match[1].replace(/\s+/g, '+')
     params = 
-      query: msg.match[1].replace(/\s+/g,'+')
+      query: query
       type: 'boardgame'
     console.log params
     bgg('search', params)
