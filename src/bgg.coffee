@@ -28,5 +28,8 @@ module.exports = (robot) ->
   robot.respond /bgg search (.*)/, (msg) ->
     bgg('search', query: msg.match[1])
       .then (results) -> 
+        items = results.items.item
+        for item in items
+          do (item) -> 
+            console.log(item)
         msg.reply "hello!"
-        console.log(results)
