@@ -36,7 +36,7 @@ module.exports = (robot) ->
           items = results.items.item
           for item in items
             do (item) -> 
-              msg.send "http://www.boardgamegeek.com/#{item.type}/#{item.id}"
+              msg.send "<http://www.boardgamegeek.com/#{item.type}/#{item.id}|#{item.name.value>"
         else
           msg.send "We couldn't find any boardgames matching \"#{msg.match[1]}\""
         
