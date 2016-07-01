@@ -33,6 +33,7 @@ module.exports = (robot) ->
     console.log params
     bgg('search', params)
       .then (results) -> 
+        console.log results
         if results.items.total > 0
           if results.items.total = 1
             items = [items]
