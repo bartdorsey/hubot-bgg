@@ -36,7 +36,7 @@ module.exports = (robot) ->
         console.log results
         if results.items.total > 0
           items = if results.items.total is 1
-            [items.item]
+            [results.items.item]
           else
             results.items.item.slice(0,4)
           for item in items
