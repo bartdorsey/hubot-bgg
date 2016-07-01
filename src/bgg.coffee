@@ -17,7 +17,7 @@
 bgg = require('bgg')
 
 module.exports = (robot) ->
-  robot.respond /^bgg search (.*)/, (msg) ->
+  robot.respond /bgg search (.*)/, (msg) ->
     bgg('search', { query: ""})
       .then (results) -> 
         console.log(results)
