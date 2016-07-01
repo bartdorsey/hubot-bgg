@@ -25,7 +25,7 @@ options =
 bgg = require('bgg')(options)
 
 module.exports = (robot) ->
-  robot.respond /bgg search (.*)/, (msg) ->
+  robot.respond /bgg search (.*)$/, (msg) ->
     params = 
       query: encodeURI msg.match[1]
       type: 'boardgame'
